@@ -9,15 +9,16 @@
 int main(void)
 {
 	int n, nn;
+
 	for (n = 48 ; n <= 57 ; n++)
-	
+
 	{
 		for (nn = 48 ; nn <= 57 ; nn++)
 
 		{
 			putchar(n);
 			putchar(nn);
-			if (nn != 5757)
+			if (n != 57 || nn != 57)
 
 			{
 				putchar(',');
