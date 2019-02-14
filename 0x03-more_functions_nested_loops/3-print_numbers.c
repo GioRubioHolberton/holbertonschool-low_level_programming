@@ -1,22 +1,20 @@
 #include "holberton.h"
 
 /**
- * print_numbers -  function that prints the numbers, from 0 to 9, followed by a new line.
+ * print_numbers -  function that prints the numbers, from 0 to 9
  *
- * @c: variable
- *
- * Return: 1 if it's Upper
  */
 void print_numbers(void)
 
 {
-	int n;
+	int c;
 
-	n = 0;
-	while (n <= 9)
+	c = 0;
+
+	while (c <= 9)
 	{
-		_putchar('0' + n);
-		n++;
+		_putchar('0' + c);
+		c++;
 	}
 	_putchar('\n');
 }
