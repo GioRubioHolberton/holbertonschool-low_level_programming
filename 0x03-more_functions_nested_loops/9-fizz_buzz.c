@@ -12,7 +12,7 @@ int main(void)
 
 	for (n = 1 ; n <= 100 ; n++)
 	{
-		if (n % 3 == 0 && n % 5 == 0 && n != 100)
+		if (n % 3 == 0 && n % 5 == 0)
 		{
 			printf("FizzBuzz");
 			putchar(' ');
@@ -23,10 +23,15 @@ int main(void)
 			putchar(' ');
 		}
 
-		else if (n % 5 == 0)
+		else if (n % 5 == 0 )
 		{
-			printf("Buzz");
-			putchar(' ');
+			if (n == 100)
+				printf("Buzz");
+			else
+			{
+				printf("Buzz");
+				putchar(' ');
+			}
 		}
 		else
 			printf("%d ", n);
