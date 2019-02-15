@@ -23,7 +23,7 @@ int main(void)
 			putchar(' ');
 		}
 
-		else if (n % 5 == 0 )
+		else if (n % 5 == 0)
 		{
 			if (n == 100)
 				printf("Buzz");
