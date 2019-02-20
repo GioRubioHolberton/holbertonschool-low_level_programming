@@ -12,13 +12,11 @@ void rev_string(char *s)
 	star = 0;
 	end = 0;
 	while (*(s + end))
-	{
 		end++;
-	}
 
 	end--;
 
-	while (star != end || star < end)
+	while (star != end && star < end)
 	{
 		aux = s[end];
 		s[end] = s[star];
