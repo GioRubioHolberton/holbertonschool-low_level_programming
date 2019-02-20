@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
+ *rev_string - function that reverses a string.
  *
- * rev_string - function that reverses a string.
- *
+ *@s: Pointer
  */
 void rev_string(char *s)
 {
