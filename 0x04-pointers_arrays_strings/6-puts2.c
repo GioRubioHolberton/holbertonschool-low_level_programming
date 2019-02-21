@@ -17,6 +17,8 @@ void puts2(char *str)
 			_putchar(str[con]);
 			con = con + 2;
 		}
+		else
+			_putchar(str[con]);
 	}
 	_putchar('\n');
 }
