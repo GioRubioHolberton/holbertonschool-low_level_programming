@@ -1,11 +1,11 @@
 #include "holberton.h"
 /**
-  * *rot13 - function that encodes a string into 1337.
-  *
-  * @s: pointer
-  *
-  *Return: dest
-  */
+ * *rot13 - function that encodes a string using rot13.
+ *
+ * @s: pointer
+ *
+ *Return: dest
+ */
 char *rot13(char *s)
 {
 	char normal[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
