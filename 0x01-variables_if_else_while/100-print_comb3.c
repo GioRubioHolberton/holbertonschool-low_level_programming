@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/**
+ * main - principal funtion
+ * Determine the last digit of a number
+ * Return: 0
+ */
+int main(void)
+{
+	int n, nn;
+
+	for (n = 48 ; n <= 57 ; n++)
+
+	{
+		for (nn = 48 ; nn <= 57 ; nn++)
+
+		{
+			if (n != nn && nn != n)
+			{
+				putchar(n);
+				putchar(nn);
+			}
+				
+			if (n != 57 || nn != 57)
+
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
+}
