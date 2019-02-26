@@ -18,11 +18,11 @@ char *_strchr(char *s, char c)
 
 	}
 
-	if (s[con] == '\0')
+	if (s[con] != c)
+		return (0);
+
+	else
 		return (&s[con]);
-
-
-	return (0);
 
 
 }
