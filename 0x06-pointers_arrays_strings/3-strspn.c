@@ -1,28 +1,28 @@
 #include "holberton.h"
 /**
- * *_strchr - spn function that gets the length of a prefix substring.
+ * _strspn - spn function that gets the length of a prefix substring.
  *
  * @s: pointer
- * @c: char
+ * @accept: char
  *
  * Return: s
  */
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	int con;
+	int con = 0, iter;
 
-	for (con = 0 ; s[con] ; con++)
+	while (s[con] != '\0')
 	{
-		if (s[con] == c)
-			return (&s[con]);
+		iter = 0;
+		while (s[con] != accept[iter] && accept[iter] != '\0')
+		{
+			iter++;
+		}
+		if (accept[iter] == '\0')
+			return (con);
 
+		con++;
 	}
 
-	if (s[con] != c)
-		return (0);
-
-	else
-		return (&s[con]);
-
-
+	return (con);
 }
