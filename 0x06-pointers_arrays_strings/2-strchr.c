@@ -9,20 +9,21 @@
  */
 char *_strchr(char *s, char c)
 {
-	int con, aux;
+	int con;
 
-	aux = c;
-
-	for (con = 0 ; con < aux ; con++)
+	for (con = 0 ; s[con] ; con++)
 	{
-		if (s[con] == aux)
-			return (s);
+		if (s[con] == c)
+			return (&s[con]);
+
+		else if (s[con] != c)
+			return ('\0');
 
 		else
-			return ('\0');
+			return (0);
 	}
 
-	return (s);
+	return (0);
 
 
 }
