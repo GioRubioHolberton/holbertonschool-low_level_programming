@@ -18,6 +18,9 @@ char *_strchr(char *s, char c)
 
 	}
 
+	if (s[con] == '\0')
+		return (&s[con]);
+
 
 	return (0);
 
