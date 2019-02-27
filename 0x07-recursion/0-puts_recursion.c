@@ -2,7 +2,7 @@
 /**
  * _puts_recursion - function that copies memory area.
  *
- * @n: char, pointer
+ * @s: char, pointer
  *
  *Return: src
  */
