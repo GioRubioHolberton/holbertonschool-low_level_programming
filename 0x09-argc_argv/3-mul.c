@@ -13,7 +13,9 @@ int main(int argc, char *argv[])
 {
 	int con, x = 1;
 
-	if (argc > 1)
+	if (argc < 3)
+		printf("Error\n");
+	else
 	{
 		for (con = 1 ; con < argc ; con++)
 		{
@@ -21,8 +23,6 @@ int main(int argc, char *argv[])
 		}
 		printf("%d\n", x);
 	}
-	else
-		printf("Error\n");
 
 	return (0);
 }
