@@ -17,12 +17,12 @@ char *create_array(unsigned int size, char c)
 	char *a;
 
 	if (size == 0)
-		return ("NULL");
+		return (NULL);
 
 	a = malloc(size * sizeof(char));
 
-	if (!a)
-		return ("NULL");
+	if (a == NULL)
+		return (NULL);
 
 	for (con = 0 ; con < size ; con++)
 	{
