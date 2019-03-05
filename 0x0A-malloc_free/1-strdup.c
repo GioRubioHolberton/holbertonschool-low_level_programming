@@ -27,7 +27,7 @@ char *_strdup(char *str)
 
 	r = malloc(con + 1 * sizeof(char));
 
-	if (!str)
+	if (!r)
 		return (NULL);
 
 	while (iter <= con)
