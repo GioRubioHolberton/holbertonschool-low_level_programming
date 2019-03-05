@@ -30,7 +30,7 @@ char *_strdup(char *str)
 	if (!str)
 		return (NULL);
 
-	while (iter <= con + 1)
+	while (iter <= con)
 	{
 		r[iter] = str[iter];
 		iter++;
