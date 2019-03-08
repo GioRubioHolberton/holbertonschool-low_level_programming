@@ -25,7 +25,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (!plop)
 		return (NULL);
 
-	while (con < nmemb)
+	while (con < size * nmemb)
 	{
 		plop[con] = 0;
 		con++;
