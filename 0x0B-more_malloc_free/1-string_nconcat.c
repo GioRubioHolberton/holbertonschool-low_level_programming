@@ -5,7 +5,6 @@
 
 /**
  *string_nconcat - Write a program that adds positive numbers.
- *
  *@s1: char
  *@s2: char
  *@n: unsigned int
@@ -22,18 +21,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	iter1 = 0;
 	iter2 = 0;
 
-	if (s1 = NULL)
+	if (s1 == NULL)
 		s1 = "";
-	if (s2 = NULL)
+	if (s2 == NULL)
 		s2 = "";
 
 	while (s1[con1])
 		con1++;
-
 	while (s2[con2])
 		con2++;
-
-	if (n > con2)
+	if (n >= con2)
 		n = con2;
 
 	plop = malloc(sizeof(char) * (con1 + n));
@@ -52,8 +49,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		plop[iter1 + iter2] = s2[iter2];
 		iter2++;
 	}
-
-	/*plop[iter1 + iter2] = NULL;*/
 
 	return (plop);
 }
