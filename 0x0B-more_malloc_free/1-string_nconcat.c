@@ -21,11 +21,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	iter1 = 0;
 	iter2 = 0;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
 	while (s1[con1])
 		con1++;
 	while (s2[con2])
