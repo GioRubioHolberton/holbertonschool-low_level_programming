@@ -20,7 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	for (con = 0 ; con < n ; con++)
 	{
-		if (separator != NULL)
+		if (separator != NULL && n != 0)
 		{
 			if (con < n - 1)
 			{
