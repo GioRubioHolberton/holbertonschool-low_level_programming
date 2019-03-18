@@ -26,18 +26,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 			if (strings == NULL)
 				printf("%p", strings);
+			else
+				printf("%s", strings);
 
 			if (separator != NULL)
 			{
 				if (con < n - 1)
-				{
-					printf("%s%s", strings, separator);
-				}
-				else
-					printf("%s", strings);
+					printf("%s", separator);
 			}
-			else
-				printf("%p", strings);
 		}
 	}
 	printf("\n");
