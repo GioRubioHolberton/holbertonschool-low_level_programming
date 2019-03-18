@@ -1,17 +1,13 @@
-SECTION .data
-	msg     db      'Hello, Holberton', 0Ah
-
-	SECTION .text
-	global  _start
-
-_start:
-
-	    mov     edx, 13
-	    mov     ecx, msg
-	    mov     ebx, 1
-	    mov     eax, 4
-	    int     80h
-
-	    mov     ebx, 0      ; return 0 status on exit - 'No Errors'
-	    mov     eax, 1      ; invoke SYS_EXIT (kernel opcode 1)
-	    int     80h
+section .text
+	
+	global main
+main:
+	mov ebx,1
+	mov ecx,msg
+	mov edx,17
+	mov eax,4
+	int 0x80
+	mov eax,0
+	int 0x80
+	section .data
+	msg db 'Hello, Holberton',0xa
