@@ -1,16 +1,16 @@
-section .data
-	text db "Hello, Holberton",10
-
-	section .text
+section .text
 	global _start
-
-_start:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, text
-	mov rdx, 14
+_start:	               		; ELF entry point
+	mov rax, 1             	; sys_write
+	mov rdi, 1             	; STDOUT
+	mov rsi, message       	; buffer
+	mov rdx, [messageLen]  	; length of buffer
+	syscall
+	mov rax, 60            	; sys_exit
+	mov rdi, 0             	; 0
 	syscall
 
-	mov rax, 60
-	mov rdi, 0
-	syscal
+	section .data
+messageLen:	 dq message.end-message
+message:	 db 'Hello, Holberton', 10
+	 .end:
