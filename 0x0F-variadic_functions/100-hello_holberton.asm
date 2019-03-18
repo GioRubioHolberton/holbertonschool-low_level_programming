@@ -1,16 +1,17 @@
-global _start   		; define entrypoint
-	section .text
+SECTION .data
+	msg     db      'Hello, Holberton', 0Ah
+
+	SECTION .text
+	global  _start
+
 _start:
-	    mov rax, 0x1    	; syscall number for write
-	    mov rdi, 0x1    	; int fd
-	    mov rsi, msg    	; const void* buf
-	    mov rdx, mlen   	; size_t count
-	    syscall
 
-	    mov rax, 0x3c 	; syscall number for exit
-	    mov rdi, 0x1  	; int status
-	    syscall
+	    mov     edx, 13
+	    mov     ecx, msg
+	    mov     ebx, 1
+	    mov     eax, 4
+	    int     80h
 
-	section .data
-msg:	 db "Hello, Holberton",0xa, 0xd
-mlen:	 equ $-msg
+	    mov     ebx, 0      ; return 0 status on exit - 'No Errors'
+	    mov     eax, 1      ; invoke SYS_EXIT (kernel opcode 1)
+	    int     80h
