@@ -1,15 +1,12 @@
-section .data
-str:	 db "Hello, Holberton", 10, 0
-
-	section .text
-	global _start
-_start:
-	  MOV RAX, 1
-	  MOV RDI, 1
-	  MOV RSI, str
-	  MOV RDX, 15
-	  syscall
-
-	  MOV RAX, 60
-	  MOV RDI, 0
-	  syscall
+section .text
+	global main
+main:
+	mov ebx,1
+	mov ecx,msg
+	mov edx,17
+	mov eax,4
+	int 0x80
+	mov eax,0
+	int 0x80
+	section .data
+	msg db 'Hello, Holberton',0xa
