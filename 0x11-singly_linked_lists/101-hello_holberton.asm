@@ -1,40 +1,20 @@
-NULL              EQU 0		; Constants
-	STD_OUTPUT_HANDLE EQU -11
+; Define variables in the data section
+SECTION .DATA
+	hello:     db 'Hello, Holberton',10
+	helloLen:  equ $-hello
 
-	extern GetStdHandle	; Import external symbols
-	extern WriteFile	; Windows API functions, not decorated
-	extern ExitProcess
+; Code goes in the text section
+SECTION .TEXT
+	GLOBAL _start 
 
-	global Start		; Export symbols. The entry point
+_start:
+	mov eax,4            ; 'write' system call = 4
+	mov ebx,1            ; file descriptor 1 = STDOUT
+	mov ecx,hello        ; string to write
+	mov edx,helloLen     ; length of string to write
+	int 80h              ; call the kernel
 
-	section .data		; Initialized data segment
-	 Message        db "Hello, Holberton", 0Dh, 0Ah
-	 MessageLength  EQU $-Message ; Address of this line ($) - address of Message
-
-	section .bss		; Uninitialized data segment
-	alignb 8
-	 StandardHandle resq 1
-	 Written        resq 1
-
-	section .text		; Code segment
-Start:
-	 and   RSP, 0FFFFFFFFFFFFFFF0h ; Align the stack to a multiple of 16 bytes
-
-	 sub   RSP, 32		; 32 bytes of shadow space
-	 mov   RCX, STD_OUTPUT_HANDLE
-	 call  GetStdHandle
-	 mov   qword [REL StandardHandle], RAX
-	 add   RSP, 32		; Remove the 32 bytes
-
-	 sub   RSP, 32 + 8 + 8	; Shadow space + 5th parameter + align stack
-	;;  to a multiple of 16 bytes
-	 mov   RCX, qword [REL StandardHandle] ; 1st parameter
-	 lea   RDX, [REL Message]	       ; 2nd parameter
-	 mov   R8, MessageLength	       ; 3rd parameter
-	 lea   R9, [REL Written]	       ; 4th parameter
-	 mov   qword [RSP + 4 * 8], NULL       ; 5th parameter
-	 call  WriteFile		       ; Output can be redirect to a file using >
-	 add   RSP, 48			       ; Remove the 48 bytes
-
-	 xor   RCX, RCX
-	 call  ExitProcess
+	; Terminate program
+	mov eax,1            ; 'exit' system call
+	mov ebx,0            ; exit with error code 0
+	int 80h              ; call the kernel
