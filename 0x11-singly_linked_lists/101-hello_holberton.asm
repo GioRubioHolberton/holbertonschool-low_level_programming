@@ -1,20 +1,21 @@
-; Define variables in the data section
-SECTION .DATA
-	hello:     db 'Hello, Holberton',10
-	helloLen:  equ $-hello
+; ----------------------------------------------------------------------------------------
+; Writes "Hello, World" to the console using only system calls. Runs on 64-bit Linux only.
+; To assemble and run:
+;
+;     nasm -felf64 hello.asm && ld hello.o && ./a.out
+; ----------------------------------------------------------------------------------------
 
-; Code goes in the text section
-SECTION .TEXT
-	GLOBAL _start 
+          global    _start
 
-_start:
-	mov eax,4            ; 'write' system call = 4
-	mov ebx,1            ; file descriptor 1 = STDOUT
-	mov ecx,hello        ; string to write
-	mov edx,helloLen     ; length of string to write
-	int 80h              ; call the kernel
+          section   .text
+_start:   mov       rax, 1                  ; system call for write
+          mov       rdi, 1                  ; file handle 1 is stdout
+          mov       rsi, message            ; address of string to output
+          mov       rdx, 13                 ; number of bytes
+          syscall                           ; invoke operating system to do the write
+          mov       rax, 60                 ; system call for exit
+          xor       rdi, rdi                ; exit code 0
+          syscall                           ; invoke operating system to exit
 
-	; Terminate program
-	mov eax,1            ; 'exit' system call
-	mov ebx,0            ; exit with error code 0
-	int 80h              ; call the kernel
+          section   .data
+message:  db        "Hello, Holberton", 10      ; note the newline at the end
