@@ -14,7 +14,7 @@ int pop_listint(listint_t **head)
 	int otrn;
 	listint_t *otrh;
 
-	if (head != NULL)
+	if (*head != NULL)
 	{
 		otrn = (*head)->n;
 		otrh = (*head)->next;
