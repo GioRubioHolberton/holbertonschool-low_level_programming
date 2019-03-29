@@ -3,9 +3,9 @@
 
 /**
  * binary_to_uint - function that prints all the elements of a list_t list.
- * @h: list
+ * @b: string
  *
- * Return: the number of nodes
+ * Return: unsigned integer number
  */
 
 unsigned int binary_to_uint(const char *b)
@@ -15,10 +15,10 @@ unsigned int binary_to_uint(const char *b)
 	if (b == NULL)
 		return (0);
 
-	for (coun = 0 ; b[coun] != '\0' ; coun++)
-		{
-			if (b[coun] != '0' && b[coun] != '1')
-				return (0);
+	for (coun = 0 ; b[coun] != '\0'; coun++)
+	{
+		if (b[coun] != '0' && b[coun] != '1')
+			return (0);
 		num = num << 1;
 		num = num | (b[coun] - '0');
 	}
