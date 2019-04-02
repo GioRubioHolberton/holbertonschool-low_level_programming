@@ -23,7 +23,7 @@ void times_table(void)
 					printf("%d, ", r);
 			}
 			else
-				printf("%2d ", r);
+				printf("%2d", r);
 		}
 		putchar('\n');
 	}
