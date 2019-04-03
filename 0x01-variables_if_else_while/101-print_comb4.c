@@ -15,15 +15,18 @@ int main(void)
 	for (i = 0 ; i <= 999 ; i++)
 	{
 		j = i % 100;
-		if (i / 100 != j / 10 && i / 100 != j % 10 && i / 100 < j / 10 && i / 100 < j % 10 && j / 10 != j % 10 && j / 10 < j % 10)
+		if (i / 100 != j / 10 && i / 100 != j % 10 && i / 100 < j / 10)
 		{
-			putchar(i / 100 + '0');
-			putchar(j / 10 + '0');
-			putchar(j % 10 + '0');
-			if (i != 789)
+			if (i / 100 < j % 10 && j / 10 != j % 10 && j / 10 < j % 10)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(i / 100 + '0');
+				putchar(j / 10 + '0');
+				putchar(j % 10 + '0');
+				if (i != 789)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
