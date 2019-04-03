@@ -3,27 +3,22 @@
 #include <time.h>
 /**
  * main - principal funtion
- * Determine the last digit of a number
+ * prints all possible different combinations of two digits
  * Return: 0
  */
+#include <stdio.h>
+
 int main(void)
 {
-	int n, nn;
+	int i;
 
-	for (n = 48 ; n <= 57 ; n++)
-
+	for (i = 0 ; i <= 99 ; i++)
 	{
-		for (nn = 48 ; nn <= 57 ; nn++)
-
+		if ((i / 10 != i % 10) && (i / 10 < i % 10))
 		{
-			if (n != nn && nn != n)
-			{
-				putchar(n);
-				putchar(nn);
-			}
-				
-			if (n != 57 || nn != 57)
-
+			putchar(i / 10 + '0');
+			putchar(i % 10 + '0');
+			if (i != 89)
 			{
 				putchar(',');
 				putchar(' ');
