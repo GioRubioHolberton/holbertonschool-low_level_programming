@@ -18,13 +18,16 @@ int main(void)
 		{
 			if (i % 10 < j % 10)
 			{
-			putchar(i / 10 + '0');
-			putchar(i % 10 + '0');
-			putchar(' ');
-			putchar(j / 10 + '0');
-			putchar(j % 10 + '0');
-			putchar(',');
-			putchar(' ');
+				putchar(i / 10 + '0');
+				putchar(i % 10 + '0');
+				putchar(' ');
+				putchar(j / 10 + '0');
+				putchar(j % 10 + '0');
+				if ((i / 10 != 9) || (i % 10 != 8) || (j / 10 != 9) || (j % 10 != 9)) 
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
