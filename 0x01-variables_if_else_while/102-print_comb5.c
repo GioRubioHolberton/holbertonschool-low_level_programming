@@ -6,8 +6,6 @@
  * prints all possible combinations of two two-digit numbers
  * Return: 0
  */
-#include <stdio.h>
-
 int main(void)
 {
 	int i, j;
@@ -16,14 +14,14 @@ int main(void)
 	{
 		for (j = 0 ; j <= 99 ; j++)
 		{
-			if (i % 10 < j % 10)
+			if (i < j && (i % 10 != j % 10))
 			{
 				putchar(i / 10 + '0');
 				putchar(i % 10 + '0');
 				putchar(' ');
 				putchar(j / 10 + '0');
 				putchar(j % 10 + '0');
-				if ((i / 10 != 9) || (i % 10 != 8) || (j / 10 != 9) || (j % 10 != 9)) 
+				if (i != 98 || j != 99)
 				{
 					putchar(',');
 					putchar(' ');
