@@ -16,7 +16,7 @@ int main(void)
 		ot = f;
 		if (i != 0)
 		{
-			printf("%u", f);
+			printf("%lu", f);
 			if (i != 50)
 				printf(", ");
 		}
