@@ -6,13 +6,14 @@
 #include <unistd.h>
 #include "holberton.h"
 /**
- * strlen - len
- * @str: string
+ * str_len - len
+ * @s: string
  * Return: s
  */
 int str_len(char *s)
 {
 	int sl = 0;
+
 	while (*s != 0)
 	{
 		sl++;
@@ -22,10 +23,10 @@ int str_len(char *s)
 }
 
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output
- * @filename: file to print
- * @letters: number of letters it should read and print
- * Return: actual number of letters it could read and print.
+ * create_file -  function that creates a file.
+ * @filename: name of the file to create
+ * @text_content: is a NULL terminated string to write to the file
+ * Return: 1 on success, -1 on failure
  *
  */
 int create_file(const char *filename, char *text_content)
@@ -47,7 +48,7 @@ int create_file(const char *filename, char *text_content)
 	st = write(fd, text_content, str_len(text_content));
 	if (st < 0)
 		return (-1);
-	
+
 	return (1);
 
 }
