@@ -23,8 +23,8 @@ int str_len(char *s)
 }
 
 /**
- * create_file -  function that creates a file.
- * @filename: name of the file to create
+ * append_text_to_file -  function that appends text at the end of a file
+ * @filename: name of the file
  * @text_content: is a NULL terminated string to write to the file
  * Return: 1 on success, -1 on failure
  *
