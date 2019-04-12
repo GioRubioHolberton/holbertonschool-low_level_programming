@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-	long int f = 1, aux = 0, ot = 0;
+	long unsigned int f = 1, aux = 0, ot = 0;
 
 	for (i = 0 ; i <= 98 ; i++)
 	{
@@ -17,7 +17,7 @@ int main(void)
 		if (i != 0)
 		{
 			printf("%lu", f);
-			if (i != 50)
+			if (i != 98)
 				printf(", ");
 		}
 	}
