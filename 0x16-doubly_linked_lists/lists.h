@@ -1,5 +1,7 @@
 #ifndef _MY_GUARD_
 #define _MY_GUARD_
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * struct dlistint_s - doubly linked list
