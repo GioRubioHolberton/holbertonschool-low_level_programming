@@ -7,19 +7,16 @@
 int main(void)
 {
 	int i;
-	float f = 1, aux = 0, ot = 0;
+	float x, z = 0, f = 1;
 
 	for (i = 1 ; i <= 98 ; i++)
 	{
-		f = f + aux;
-		aux = ot;
-		ot = f;
-		if (i != 0)
-		{
-			printf("%0.f", f);
-			if (i != 98)
-				printf(", ");
-		}
+		x = z;
+		z = f;
+		f += x;
+		printf("%0.f", f);
+		if (i != 98)
+			printf(", ");
 	}
 	printf("\n");
 	return (0);
