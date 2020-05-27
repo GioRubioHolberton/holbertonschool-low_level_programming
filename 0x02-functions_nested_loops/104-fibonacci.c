@@ -9,7 +9,7 @@ int main(void)
 	int i;
 	float f = 1, aux = 0, ot = 0;
 
-	for (i = 0 ; i <= 98 ; i++)
+	for (i = 1 ; i <= 98 ; i++)
 	{
 		f = f + aux;
 		aux = ot;
